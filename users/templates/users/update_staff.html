@@ -1,0 +1,28 @@
+{% extends "myportal/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <article class="media content-section">
+    <div class="media-body">
+        <h2 class="article-content">User Profile</h2>
+        <p class="article-content"> Update the User Profile of the Staff</p>
+
+
+    </div>
+
+
+
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile info</legend>
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit" href="{% url 'home' %}" >Update Profile</button>
+              
+            </div>
+        </form>
+        
+    </div>
+{% endblock content %}

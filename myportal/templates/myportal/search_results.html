@@ -1,0 +1,18 @@
+{%extends "myportal/base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="section" class="text_align_center heading_main">
+    <div class="container">
+        <div class="row" style="margin-left: 5cm;">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h2 class="article-title"><a href="{% url 'update_dber' dber.id %}"> {{ dber.name }}</a></h2>
+                      <p class="article-content"> {{ dber.uid }}</p>
+                      <p class="article-content"> DOB : {{ dber.dob }}</p>
+                      <p class="article-content"> Sex : {{ dber.gender }}</p>
+                      <p class="article-content"> City: {{ dber.city }}, {{ dber.state }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "myportal/base.html" %}
+{% block content %} 
+<article class="media content-section">
+    <div class ="media-body" style="padding-top:50px">
+        <div class="article-metadata">
+        <h2>My Db Portal</h2>
+        <p>Database management system</p>
+        <h4><b><i><a class="article-title" href="{% url 'send_mass_mails'  %}">Send a Mail to all your dber</a></i></b><br></h4>
+        {% for user in user %}
+          <h2>{{user.name}}</h2>
+          <b><i><a class="article-title" href="{% url 'send_mail' user.id %}">Send a Mail</a></i></b><br>
+        {% endfor %}  
+        </div>
+</div>
+{% endblock%}
